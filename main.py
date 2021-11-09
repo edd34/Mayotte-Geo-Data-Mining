@@ -1,5 +1,5 @@
 import lxml.etree
-tree = lxml.etree.parse('mayotte')
+tree = lxml.etree.parse('mayotte.xml')
 
 list_amenity = []
 set_amenity = set()
