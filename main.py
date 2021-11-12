@@ -1,12 +1,77 @@
-import lxml.etree
-tree = lxml.etree.parse('mayotte.xml')
+import overpass
+import geojson
+api = overpass.API()
+import geopandas as gpd
 
-list_amenity = []
-set_amenity = set()
+query = f'''
+[out:json]
+[timeout:25]
+;
+(
+  node
+    ["amenity"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  way
+    ["amenity"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  relation
+    ["amenity"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  node
+    ["healthcare"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  way
+    ["healthcare"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  relation
+    ["healthcare"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  node
+    ["leisure"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  way
+    ["leisure"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  relation
+    ["leisure"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  node
+    ["shop"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  way
+    ["shop"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  relation
+    ["shop"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  node
+    ["tourism"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  way
+    ["tourism"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+  relation
+    ["tourism"]
+    (-13.116261286987,44.660110473633,-12.573329212,45.618667602539);
+);
+out;
+>;
 
-for tag in tree.findall('.//tag/..')[10:]:
-    for child in tag.xpath("./tag"):
-        if child.get("k") == "amenity":
-            set_amenity.add(child.get("v"))
+out skel qt;
+'''
 
-print(set_amenity)
+res = api.get(query, build=False)
+# print(len(res.nodes))
+# print(len(res.ways))
+# print(len(res.relations))
+# print(res)
+
+with open("./test.json",mode="w") as f:
+  geojson.dump(res,f)
+
+df = gpd.read_file("./test.json")
+print(df)
+# df.head(2)
+
+# df["lon"] = df["geometry"].centroid.x
+# df["lat"] = df["geometry"].centroid.y
