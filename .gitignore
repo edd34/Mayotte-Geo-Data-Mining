@@ -140,3 +140,4 @@ data/
 **/migrations/
 export.csv
 test.json
+cache/
