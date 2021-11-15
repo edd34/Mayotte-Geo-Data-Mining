@@ -33,10 +33,10 @@ def my_custom_filter(features, x):
     return True
 
 
-res = filter(lambda x: my_custom_filter(list_features, x), data_load)
+data_load = filter(lambda x: my_custom_filter(list_features, x), data_load)
 # pprint(list(res))
 
-gdf = gpd.GeoDataFrame(res)
+gdf = gpd.GeoDataFrame(data_load)
 gdf["geometry"] = gpd.points_from_xy(gdf["lon"], gdf["lat"])
 x, y = p(gdf["lon"], gdf["lat"])
 gdf["geometry"] = gpd.points_from_xy(x, y)
