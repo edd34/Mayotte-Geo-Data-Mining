@@ -1,1 +1,3 @@
-lxml==4.6.4
+geojson==2.5.0
+geopandas==0.10.2
+overpass==0.7
