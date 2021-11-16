@@ -1,5 +1,6 @@
-import overpass
 import geojson
+import overpass
+
 from query import query
 
 api = overpass.API()
