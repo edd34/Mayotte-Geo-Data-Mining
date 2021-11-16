@@ -8,9 +8,6 @@ import geopandas as gpd
 from query import query
 from pyproj import Proj
 
-p = Proj(proj="utm", zone=38, unit_name="meters", preserve_units=False)
-print(p)
-print(p.get_factors(-12.7784296, 45.2322564))
 ox.config(use_cache=True, log_console=True)
 # G = ox.graph_from_place("Mayotte", simplify=False)
 # gdf_osmnx = ox.geometries_from_place("Mayotte")
@@ -37,9 +34,13 @@ data_load = filter(lambda x: my_custom_filter(list_features, x), data_load)
 # pprint(list(res))
 
 gdf = gpd.GeoDataFrame(data_load)
+gdf.crs = {"init": "epsg:4326"}
+
+
 gdf["geometry"] = gpd.points_from_xy(gdf["lon"], gdf["lat"])
-x, y = p(gdf["lon"], gdf["lat"])
-gdf["geometry"] = gpd.points_from_xy(x, y)
+print(gdf)
+gdf = gdf.to_crs("EPSG:3857")
+print(gdf)
 
 
 def get_close_nodes(df: GeoDataFrame, distance: float, x: float, y: float):
@@ -55,7 +56,7 @@ print(location)
 print(float(location["geometry"].x), float(location["geometry"].y))
 pprint(dict(location["tags"]))
 POI = get_close_nodes(
-    gdf, 50, float(location["geometry"].x), float(location["geometry"].y)
+    gdf, 50000000000, float(location["geometry"].x), float(location["geometry"].y)
 )
 
 print(POI)
