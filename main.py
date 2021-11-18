@@ -21,11 +21,11 @@ gdf = gdf_raw[gdf_raw["type"] == "node"]
 gdf.crs = {"init": "epsg:4326"}
 
 # process gdf_way
-print(gdf_way.head(), gdf_way.shape)
+# print(gdf_way.head(), gdf_way.shape)
 gdf_way = gdf_way[gdf_way["geometry"].str.len() >= 3]
-print(gdf_way.head(), gdf_way.shape)
+# print(gdf_way.head(), gdf_way.shape)
 gdf_way["geometry"] = gdf_way["geometry"].apply(
-    lambda x: Polygon([Point(i.get("lat"), i.get("lon")) for i in x]), 1
+    lambda x: Polygon([Point(i.get("lon"), i.get("lat")) for i in x]), 1
 )
 gdf_way["geometry"] = gdf_way["geometry"].centroid
 
@@ -33,20 +33,18 @@ gdf_way["geometry"] = gdf_way["geometry"].centroid
 gdf["geometry"] = gpd.points_from_xy(gdf["lon"], gdf["lat"])
 
 # concat dataframes
-
+gdf = gdf.append(gdf_way, ignore_index=True)
 # change projection to metric
 gdf = gdf.to_crs("EPSG:3857")
-print(gdf)
-
 
 location = gdf.sample(1)
 print("location", location)
 print(float(location["geometry"].x), float(location["geometry"].y))
 pprint(dict(location["tags"]))
 POI = get_close_nodes(
-    gdf, 500, float(location["geometry"].x), float(location["geometry"].y), 5
+    gdf, 400, float(location["geometry"].x), float(location["geometry"].y), 20
 )
 
-print(POI)
+print(POI, POI[POI["type"] == "node"].shape, POI[POI["type"] == "way"].shape)
 
 # step 3 : return data in a format easily readable and usable
