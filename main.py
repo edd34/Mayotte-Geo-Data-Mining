@@ -3,9 +3,10 @@ import geojson
 import geopandas as gpd
 import osmnx as ox
 import overpass
-from query import query
+from shapely.geometry import Point, Polygon
+
 from helpers import get_close_nodes
-from shapely.geometry import Polygon, Point
+from query import query
 
 ox.config(use_cache=True, log_console=True)
 api = overpass.API()
@@ -21,30 +22,38 @@ gdf = gdf_raw[gdf_raw["type"] == "node"]
 gdf.crs = {"init": "epsg:4326"}
 
 # process gdf_way
-# print(gdf_way.head(), gdf_way.shape)
 gdf_way = gdf_way[gdf_way["geometry"].str.len() >= 3]
-# print(gdf_way.head(), gdf_way.shape)
 gdf_way["geometry"] = gdf_way["geometry"].apply(
-    lambda x: Polygon([Point(i.get("lon"), i.get("lat")) for i in x]), 1
+    lambda x: Polygon([Point(i.get("lat"), i.get("lon")) for i in x]), 1
 )
 gdf_way["geometry"] = gdf_way["geometry"].centroid
 
 # process gdf
-gdf["geometry"] = gpd.points_from_xy(gdf["lon"], gdf["lat"])
+gdf["geometry"] = gpd.points_from_xy(gdf["lat"], gdf["lon"])
 
 # concat dataframes
 gdf = gdf.append(gdf_way, ignore_index=True)
 # change projection to metric
-gdf = gdf.to_crs("EPSG:3857")
+# gdf = gdf.to_crs("EPSG:3857")
 
-location = gdf.sample(1)
-print("location", location)
-print(float(location["geometry"].x), float(location["geometry"].y))
-pprint(dict(location["tags"]))
+location = gdf.to_crs("EPSG:3857").sample(1)
+# todo : use log
+# print("location", location)
+# print(float(location["geometry"].x), float(location["geometry"].y))
+# pprint(dict(location["tags"]))
 POI = get_close_nodes(
     gdf, 400, float(location["geometry"].x), float(location["geometry"].y), 20
 )
 
-print(POI, POI[POI["type"] == "node"].shape, POI[POI["type"] == "way"].shape)
-
+# TODO : use log
+# print(POI, POI[POI["type"] == "node"].shape, POI[POI["type"] == "way"].shape)
+list_markers = list(POI["geometry"])
 # step 3 : return data in a format easily readable and usable
+
+POI = POI.to_crs("EPSG:4326")
+list_markers = list(POI["geometry"])
+clean_list_markers = [
+    (list_markers[i].x, list_markers[i].y) for i in range(1, len(list_markers))
+]
+pprint(location)
+pprint(clean_list_markers)
