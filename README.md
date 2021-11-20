@@ -29,7 +29,7 @@ pip3 install -r requirements.txt
 
 In order to run the backend program, you should follow the steps described below. All commands are run from the root folder.
 
-### refreshing the map
+### Refresh the geodata
 
 ```bash
 python download_geojson.py
