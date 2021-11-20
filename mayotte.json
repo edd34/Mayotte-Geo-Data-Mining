@@ -1,8 +1,8 @@
 {
     "version": 0.6,
-    "generator": "Overpass API 0.7.57.1 74a55df1",
+    "generator": "Overpass API 0.7.57 93a4d346",
     "osm3s": {
-        "timestamp_osm_base": "2021-11-15T05:00:07Z",
+        "timestamp_osm_base": "2021-11-20T20:14:56Z",
         "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
     },
     "elements": [
@@ -12573,7 +12573,7 @@
             "lon": 45.0742147,
             "tags": {
                 "amenity": "place_of_worship",
-                "name": "Mosqu\u00e9e de vendredi",
+                "name": "Mosqu\u00e9e Masdjidil Razzak",
                 "religion": "muslim",
                 "survey:date": "2019-12-11",
                 "wheelchair": "no"
@@ -14787,8 +14787,8 @@
         {
             "type": "node",
             "id": 7136372486,
-            "lat": -12.7509412,
-            "lon": 45.0552605,
+            "lat": -12.750915,
+            "lon": 45.0552364,
             "tags": {
                 "name": "Douka",
                 "shop": "convenience",
@@ -14798,8 +14798,8 @@
         {
             "type": "node",
             "id": 7136372487,
-            "lat": -12.750858,
-            "lon": 45.0552174,
+            "lat": -12.7508698,
+            "lon": 45.05521,
             "tags": {
                 "name": "Douka",
                 "shop": "convenience",
@@ -16515,8 +16515,8 @@
         {
             "type": "node",
             "id": 7869559017,
-            "lat": -12.7891579,
-            "lon": 45.1341572,
+            "lat": -12.7891769,
+            "lon": 45.1342169,
             "tags": {
                 "amenity": "fast_food",
                 "cuisine": "american",
@@ -17250,6 +17250,7 @@
                 "cuisine": "kebab",
                 "name": "Sunlight Kebab",
                 "phone": "0639038401",
+                "source": "survey",
                 "survey:date": "2021-02-20",
                 "takeaway": "yes",
                 "wheelchair": "limited"
@@ -17882,7 +17883,7 @@
             "lon": 45.1341782,
             "tags": {
                 "addr:city": "Tsingoni",
-                "addr:country": "MY",
+                "addr:country": "YT",
                 "addr:housenumber": "11",
                 "addr:place": "Combani",
                 "addr:postcode": "97680",
@@ -19038,8 +19039,8 @@
         {
             "type": "node",
             "id": 8724714884,
-            "lat": -12.7911313,
-            "lon": 45.1033842,
+            "lat": -12.7911666,
+            "lon": 45.1034875,
             "tags": {
                 "amenity": "library",
                 "name": "Biblioth\u00e8que Municipale de Tsingoni"
@@ -20322,7 +20323,7 @@
             "lon": 45.0809779,
             "tags": {
                 "addr:city": "Bou\u00e9ni",
-                "addr:country": "FR",
+                "addr:country": "YT",
                 "addr:housenumber": "70",
                 "addr:postcode": "97620",
                 "addr:street": "Boulevard des tortues",
@@ -21281,6 +21282,70 @@
             "tags": {
                 "leisure": "slipway",
                 "name": "Bandari Ya Mzoungou"
+            }
+        },
+        {
+            "type": "node",
+            "id": 9253725257,
+            "lat": -12.9377457,
+            "lon": 45.1414553,
+            "tags": {
+                "amenity": "fast_food",
+                "cuisine": "sandwich"
+            }
+        },
+        {
+            "type": "node",
+            "id": 9255057117,
+            "lat": -12.844822,
+            "lon": 45.1028188,
+            "tags": {
+                "shop": "hardware",
+                "survey:date": "2021-11-16"
+            }
+        },
+        {
+            "type": "node",
+            "id": 9263438665,
+            "lat": -12.7893541,
+            "lon": 45.1311324,
+            "tags": {
+                "amenity": "restaurant",
+                "cuisine": "french",
+                "email": "lebitosnack@gmail.com",
+                "name": "Le Bito Snack",
+                "opening_hours": "Mo-Th 11:00-14:00,18:00-21:30; Fr,Sa 11:00-14:30,18:00-23:00; Su 11:00-14:30",
+                "phone": "+33693949079",
+                "survey:date": "2021-11-18",
+                "website": "https://www.facebook.com/Le-Bito-Snack-100434155159747",
+                "wheelchair": "limited"
+            }
+        },
+        {
+            "type": "node",
+            "id": 9263722984,
+            "lat": -12.797434,
+            "lon": 45.1307588,
+            "tags": {
+                "email": "hotelrestaurantlediwan@gmail.com",
+                "name": "Le Diwan h\u00f4tel",
+                "source": "survey",
+                "tourism": "hotel",
+                "website": "https://www.facebook.com/LeDiwanHotel"
+            }
+        },
+        {
+            "type": "node",
+            "id": 9263722985,
+            "lat": -12.7972654,
+            "lon": 45.130819,
+            "tags": {
+                "amenity": "restaurant",
+                "email": "hotelrestaurantlediwan@gmail.com",
+                "name": "Le Diwan",
+                "phone": "0639 21 01 33",
+                "source": "survey",
+                "website": "https://www.facebook.com/LeDiwanHotel"
             }
         },
         {
@@ -38494,7 +38559,7 @@
             ],
             "tags": {
                 "leisure": "pitch",
-                "name": "Terrain de Football de Chembenyumba",
+                "name": "Terrain de Football de Chembenyumba (Stade Alakarabu)",
                 "sport": "soccer"
             }
         },
@@ -61327,7 +61392,8 @@
                 }
             ],
             "tags": {
-                "amenity": "school"
+                "amenity": "school",
+                "name": "Ecole primaire Ahmed Ali"
             }
         },
         {
@@ -83376,7 +83442,7 @@
             "id": 903357002,
             "bounds": {
                 "minlat": -12.7878919,
-                "minlon": 45.133576,
+                "minlon": 45.133572,
                 "maxlat": -12.7875132,
                 "maxlon": 45.133861
             },
@@ -83386,6 +83452,7 @@
                 8390201139,
                 8390201138,
                 8390201137,
+                9263439787,
                 8390201136,
                 8390201141
             ],
@@ -83409,6 +83476,10 @@
                 {
                     "lat": -12.7878167,
                     "lon": 45.1335961
+                },
+                {
+                    "lat": -12.7877284,
+                    "lon": 45.133572
                 },
                 {
                     "lat": -12.7876231,
@@ -88659,7 +88730,9 @@
                 }
             ],
             "tags": {
-                "amenity": "school"
+                "amenity": "school",
+                "name": "Ecole meternelle du front de mer",
+                "source": "survey"
             }
         },
         {
@@ -89337,6 +89410,8 @@
                 8642936411,
                 8642936410,
                 8642936409,
+                9259966064,
+                9259966063,
                 8642936408,
                 8642936407,
                 8642936406,
@@ -89363,8 +89438,8 @@
                     "lon": 45.1036325
                 },
                 {
-                    "lat": -12.7898569,
-                    "lon": 45.103597
+                    "lat": -12.7898549,
+                    "lon": 45.103603
                 },
                 {
                     "lat": -12.7901008,
@@ -89375,8 +89450,16 @@
                     "lon": 45.1037854
                 },
                 {
-                    "lat": -12.7901126,
-                    "lon": 45.1038122
+                    "lat": -12.7901195,
+                    "lon": 45.1038099
+                },
+                {
+                    "lat": -12.790142,
+                    "lon": 45.1038126
+                },
+                {
+                    "lat": -12.7901348,
+                    "lon": 45.1038558
                 },
                 {
                     "lat": -12.7901364,
@@ -109631,6 +109714,222 @@
             "tags": {
                 "amenity": "school",
                 "source": "BDOrtho IGN (2016)"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1002616895,
+            "bounds": {
+                "minlat": -12.8356055,
+                "minlon": 45.1139386,
+                "maxlat": -12.8354382,
+                "maxlon": 45.1140663
+            },
+            "nodes": [
+                9253156682,
+                9253156681,
+                9253156680,
+                9253156679,
+                9253156678,
+                9253156677,
+                9253156676,
+                9253156675,
+                9253156674,
+                9253156682
+            ],
+            "geometry": [
+                {
+                    "lat": -12.8354584,
+                    "lon": 45.1139386
+                },
+                {
+                    "lat": -12.8354931,
+                    "lon": 45.1139466
+                },
+                {
+                    "lat": -12.8355545,
+                    "lon": 45.1139614
+                },
+                {
+                    "lat": -12.8355558,
+                    "lon": 45.1139939
+                },
+                {
+                    "lat": -12.835583,
+                    "lon": 45.1140412
+                },
+                {
+                    "lat": -12.8356055,
+                    "lon": 45.1140599
+                },
+                {
+                    "lat": -12.8355902,
+                    "lon": 45.1140663
+                },
+                {
+                    "lat": -12.8354382,
+                    "lon": 45.1140422
+                },
+                {
+                    "lat": -12.8354529,
+                    "lon": 45.1139587
+                },
+                {
+                    "lat": -12.8354584,
+                    "lon": 45.1139386
+                }
+            ],
+            "tags": {
+                "amenity": "parking",
+                "source": "BDOrtho IGN (2016)",
+                "surface": "concrete"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1002914350,
+            "bounds": {
+                "minlat": -12.7872285,
+                "minlon": 45.111599,
+                "maxlat": -12.7869823,
+                "maxlon": 45.1116999
+            },
+            "nodes": [
+                9255580364,
+                9255580363,
+                9255580362,
+                9255580361,
+                9255580360,
+                9255580364
+            ],
+            "geometry": [
+                {
+                    "lat": -12.7869855,
+                    "lon": 45.111599
+                },
+                {
+                    "lat": -12.7872285,
+                    "lon": 45.1116491
+                },
+                {
+                    "lat": -12.7872087,
+                    "lon": 45.1116999
+                },
+                {
+                    "lat": -12.7870581,
+                    "lon": 45.1116438
+                },
+                {
+                    "lat": -12.7869823,
+                    "lon": 45.1116272
+                },
+                {
+                    "lat": -12.7869855,
+                    "lon": 45.111599
+                }
+            ],
+            "tags": {
+                "amenity": "parking",
+                "source": "BDOrtho IGN (2016)",
+                "surface": "concrete"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1002930435,
+            "bounds": {
+                "minlat": -12.7892546,
+                "minlon": 45.1122937,
+                "maxlat": -12.7890671,
+                "maxlon": 45.1124517
+            },
+            "nodes": [
+                9255610492,
+                9255610489,
+                9255610490,
+                9255610491,
+                9255610492
+            ],
+            "geometry": [
+                {
+                    "lat": -12.7890915,
+                    "lon": 45.1122937
+                },
+                {
+                    "lat": -12.7890671,
+                    "lon": 45.1123273
+                },
+                {
+                    "lat": -12.7892302,
+                    "lon": 45.1124517
+                },
+                {
+                    "lat": -12.7892546,
+                    "lon": 45.1124181
+                },
+                {
+                    "lat": -12.7890915,
+                    "lon": 45.1122937
+                }
+            ],
+            "tags": {
+                "amenity": "parking",
+                "source": "BDOrtho IGN (2016)",
+                "surface": "concrete"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1003961864,
+            "bounds": {
+                "minlat": -12.7973944,
+                "minlon": 45.1306153,
+                "maxlat": -12.7972449,
+                "maxlon": 45.130713
+            },
+            "nodes": [
+                9263722978,
+                9263722983,
+                9263722982,
+                9263722981,
+                9263722980,
+                9263722979,
+                9263722978
+            ],
+            "geometry": [
+                {
+                    "lat": -12.7972449,
+                    "lon": 45.1306339
+                },
+                {
+                    "lat": -12.7972609,
+                    "lon": 45.1307116
+                },
+                {
+                    "lat": -12.7972951,
+                    "lon": 45.130713
+                },
+                {
+                    "lat": -12.7973944,
+                    "lon": 45.130672
+                },
+                {
+                    "lat": -12.7973784,
+                    "lon": 45.1306335
+                },
+                {
+                    "lat": -12.7972906,
+                    "lon": 45.1306153
+                },
+                {
+                    "lat": -12.7972449,
+                    "lon": 45.1306339
+                }
+            ],
+            "tags": {
+                "amenity": "parking",
+                "source": "BDOrtho IGN (2016) and survey",
+                "surface": "gravel"
             }
         },
         {

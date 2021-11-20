@@ -1,15 +1,11 @@
 from pprint import pprint
+
 import geojson
 import geopandas as gpd
-import osmnx as ox
-import overpass
 from shapely.geometry import Point, Polygon
 
 from helpers import get_close_nodes
 from query import query
-
-ox.config(use_cache=True, log_console=True)
-api = overpass.API()
 
 # step 1 : extract raw data from the dowloaded json
 with open("./mayotte.json", mode="r") as f:
