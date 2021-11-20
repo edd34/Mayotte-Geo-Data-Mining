@@ -1,11 +1,8 @@
 import geojson
 import geopandas as gpd
-from shapely.geometry import Point, Polygon
-
-from helpers import get_close_nodes
-from query import query
 from osmnx.distance import euclidean_dist_vec
 from pyproj import Proj, transform
+from shapely.geometry import Point, Polygon
 
 P3857 = Proj(init="epsg:3857")
 P4326 = Proj(init="epsg:4326")
