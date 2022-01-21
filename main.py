@@ -48,6 +48,7 @@ list_markers = list(POI["geometry"])
 
 POI = POI.to_crs("EPSG:4326")
 list_markers = list(POI["geometry"])
+print(list_markers)
 clean_list_markers = [
     (list_markers[i].x, list_markers[i].y) for i in range(1, len(list_markers))
 ]
