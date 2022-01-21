@@ -47,12 +47,21 @@ class POI:
         return res
 
     def clean_output_format(self, POI):
-        list_markers = list(POI["geometry"])
         # step 3 : return data in a format easily readable and usable
 
         POI = POI.to_crs("EPSG:4326")
         list_markers = list(POI["geometry"])
+        list_id = list(POI["id"])
+        list_tags = list(POI["tags"])
+        list_distance = list(POI["distance"])
+
         clean_list_markers = [
-            (list_markers[i].x, list_markers[i].y) for i in range(1, len(list_markers))
+            dict(
+                position=(list_markers[i].x, list_markers[i].y),
+                id=list_id[i],
+                tags=list_tags[i],
+                distance=list_distance[i],
+            )
+            for i in range(1, len(list_markers))
         ]
-        return clean_list_markers
+        return dict(result=clean_list_markers, len_result=len(clean_list_markers))
